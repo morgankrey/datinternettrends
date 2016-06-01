@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			body {
+			    background-image: url("https://i.imgur.com/3udLX1g.gif");
+			    background-repeat: repeat;
+			}
+			div {
+			    text-align: center;
+			    width: 100%;
+			    vertical-align: middle;
+			    height: 100%;
+			    display: table-cell;
+			}
+			div,
+			body,
+			html {
+			    height: 100%;
+			    width: 100%;
+			}
+			body{
+			    display: table;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script>
+			function randomAirhorn(){
+				$("<audio></audio>").attr({ 
+						'src':'https://www.htfr.com/assets/sample/MR223281_60.mp3', 
+						'autoplay':'autoplay'
+					}).appendTo("body");
+			}
+			(function loop() {
+			    var rand = Math.round(Math.random() * 60000);
+			    setTimeout(function() {
+			            randomAirhorn();
+			            loop();  
+			    }, rand);
+			}());
+			$(document).ready(function(){
+				$(window).scroll(function(){
+			        $("<audio></audio>").attr({ 
+						'src':'airhorn.mp3', 
+						'autoplay':'autoplay'
+					}).appendTo("body");
+			    });
+			    $(window).click(function(){
+			        $("<audio></audio>").attr({ 
+						'src':'airhorn.mp3', 
+						'autoplay':'autoplay'
+					}).appendTo("body");
+			    });
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<iframe id='presentation' onLoad="alert(this.contentWindow.location);" align='middle' src="http://www.slideshare.net/slideshow/embed_code/key/sUM0BRj7Dd2ENC" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> 
+		</div>
+	</body>
+</html>
